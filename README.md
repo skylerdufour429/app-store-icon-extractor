@@ -1,75 +1,132 @@
 # iOS IPA Archive
 
-A GitHub Pages + GitHub Codespaces-ready web archive for browsing and downloading iOS IPA files.
+A GitHub Pages and GitHub Codespaces-ready web archive for hosting and browsing iOS IPA files.
 
-## Features
+## 📱 App Information
 
-- 📱 iOS IPA archive listing
-- 🔎 App metadata display
-- ⬇️ Direct IPA download links
-- 🌐 GitHub Pages compatible
-- ☁️ GitHub Codespaces development ready
-- 📝 Simple static HTML/CSS/JavaScript structure
+| Field | Details |
+|---|---|
+| **App Name** | Animal Sounds |
+| **Bundle ID** | `com.smartbabyapps.animalsounds` |
+| **Version** | 2.0 |
+| **Platform** | iOS |
+| **Minimum OS** | iOS 3.0 |
+| **Binary Size** | 19.8 MB |
+| **App Bundle** | `Payload/Animal Sounds.app` |
+| **Bundle Contents** | 608 items |
 
-## App Archive
-
-| App Name | Bundle ID | Version | Platform | Minimum OS | Binary Size | Download |
-|---|---|---|---|---|---|---|
-| Animal Sounds | `com.smartbabyapps.animalsounds` | 2.0 | iOS | 3.0 | 19.8 MB | [Download IPA](https://archive.org/download/animal-sounds-2.0/Animal%20Sounds%202.0.ipa) |
-
-## Example App Details
+## 📦 IPA Archive Entry
 
 ### Animal Sounds
 
-- **App Name:** Animal Sounds
-- **Bundle ID:** `com.smartbabyapps.animalsounds`
+- **Name:** Animal Sounds
+- **Bundle Identifier:** `com.smartbabyapps.animalsounds`
 - **Version:** 2.0
-- **Platform:** iOS
-- **Minimum OS:** 3.0
-- **Binary Size:** 19.8 MB
-- **IPA File:** [Animal Sounds 2.0.ipa](https://archive.org/download/animal-sounds-2.0/Animal%20Sounds%202.0.ipa)
+- **Device Platform:** iPhone / iPod touch
+- **Minimum iOS Version:** 3.0
+- **Download:** `AnimalSounds.ipa`
 
-## Project Structure
+## 🗂 Archive Structure
 
 ```
-ipa-archive/
+ios-ipa-archive/
 ├── index.html
-├── style.css
-├── app.js
-├── apps.json
 ├── README.md
-└── .devcontainer/
-    └── devcontainer.json
+├── apps/
+│   └── animal-sounds/
+│       ├── AnimalSounds.ipa
+│       ├── icon.png
+│       └── metadata.json
+├── assets/
+│   ├── style.css
+│   └── app.js
+└── .github/
+    └── workflows/
+        └── pages.yml
 ```
 
-## Running in GitHub Codespaces
+## 🚀 GitHub Pages Deployment
 
-1. Open the repository on GitHub.
-2. Select **Code → Codespaces → Create codespace**.
-3. Start a local server:
+This project is designed to run directly on GitHub Pages.
 
-```bash
-python3 -m http.server 8080
-```
+### Enable Pages
 
-4. Open the forwarded port in your browser.
-
-## Deploy with GitHub Pages
-
-1. Open repository **Settings**.
+1. Open repository settings.
 2. Go to **Pages**.
 3. Select:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-4. Save.
-
-Your IPA archive website will be available at:
 
 ```
-https://YOUR_USERNAME.github.io/ipa-archive/
+Source: GitHub Actions
 ```
 
-## License
+4. Push changes to the `main` branch.
 
-This project is provided as an example archive interface.
+The archive will be available at:
+
+```
+https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/
+```
+
+## 💻 GitHub Codespaces
+
+Open this repository in GitHub Codespaces:
+
+1. Click **Code**
+2. Select **Codespaces**
+3. Create a new codespace
+
+Development server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Open:
+
+```
+http://localhost:8000
+```
+
+## 📄 App Metadata Example
+
+`apps/animal-sounds/metadata.json`
+
+```json
+{
+  "name": "Animal Sounds",
+  "bundleIdentifier": "com.smartbabyapps.animalsounds",
+  "version": "2.0",
+  "platform": "iOS",
+  "minimumOS": "3.0",
+  "size": "19.8 MB",
+  "bundlePath": "Payload/Animal Sounds.app",
+  "bundleItems": 608,
+  "ipa": "AnimalSounds.ipa"
+}
+```
+
+## 🔗 IPA Installation
+
+Supported installation methods depend on device configuration and signing status.
+
+Possible distribution methods:
+
+- Enterprise signed IPA
+- Ad Hoc distribution
+- Development provisioning
+- Local archive reference
+
+## 🛠 Features
+
+- Static GitHub Pages hosting
+- Mobile-friendly app catalog
+- IPA metadata display
+- Bundle information viewer
+- GitHub Codespaces development support
+- No backend required
+
+## 📜 License
+
+This archive interface is provided as an example project.
+
+Only distribute IPA files that you have permission to host and share.
